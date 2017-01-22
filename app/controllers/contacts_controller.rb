@@ -1,17 +1,14 @@
 class ContactsController < ApplicationController
-  def one_contact
-    @contact = Contact.first
-  end
-
-  def all_contacts
+  
+  def index
     @contacts = Contact.all
-  end
+  end  
 
-  def get_contact_form
+  def new
     
   end
 
-  def use_contact_form
+  def create
     @contact = Contact.new(
                           first_name: params["first_name"],
                           last_name: params["last_name"],
@@ -22,5 +19,28 @@ class ContactsController < ApplicationController
 
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+  end
+
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.phone_number = params[:phone_number]
+
+    @contact.save
+  end
+
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+  end
 
 end
