@@ -5,7 +5,5 @@
 
 <a href="/contacts">Home</a>
 <div></div>
-<a class="btn btn-info" href="/contacts/<%= @contact.id %>/edit">Edit Contact</a>
-<%= form_tag "/contacts/#{@contact.id}", method: :delete do %>
-  <input class="btn btn-danger" type="submit" value="delete contact">
-<% end %>
+<%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit", class: "btn btn-info" %>
+<%= link_to "Delete Contact", "/contacts/#{@contact.id}", class: "btn btn-danger", method: :delete %>
