@@ -1,7 +1,8 @@
 <h2>First Name: <%= @contact.first_name %></h2>
-<h4>Last Name: <%= @contact.last_name %></h4>
+<h2>Last Name: <%= @contact.last_name %></h2>
 <h3>Email: <%= @contact.email %></h3>
-<h3>Phone Number: <%= @contact.phone_number %></h3>
+<h3>Phone Number: <%= @contact.display_phone_prefix %></h3>
+<h5>Updated On: <%= @contact.friendly_updated_at %></h5>
 
 <a href="/contacts">Home</a>
 <div></div>
