@@ -4,7 +4,6 @@
 <h3>Phone Number: <%= @contact.display_phone_prefix %></h3>
 <h5>Updated On: <%= @contact.friendly_updated_at %></h5>
 
-<a href="/contacts">Home</a>
-<div></div>
+<%= link_to "Home", "/contacts", class: "btn btn-primary" %>
 <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit", class: "btn btn-info" %>
 <%= link_to "Delete Contact", "/contacts/#{@contact.id}", class: "btn btn-danger", method: :delete %>
