@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
   def full_name
-    "#{first_name} #{middle_name} #{last_name}".titleize
+    "#{first_name}#{'' + middle_name if middle_name} #{last_name}".titleize
     # full_name = ""
     # full_name += first_name.upcase if first_name != nil 
     # full_name += " " if first_name != nil && last_name != nil
