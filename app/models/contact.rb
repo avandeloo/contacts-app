@@ -1,14 +1,15 @@
 class Contact < ApplicationRecord
   def full_name
-    full_name = ""
-    full_name += "#{first_name}".upcase if first_name != nil 
-    full_name += " " if first_name != nil && last_name != nil
-    full_name += "#{last_name}".upcase if last_name != nil
-    full_name
+    "#{first_name} #{middle_name} #{last_name}".titleize
+    # full_name = ""
+    # full_name += first_name.upcase if first_name != nil 
+    # full_name += " " if first_name != nil && last_name != nil
+    # full_name += last_name.upcase if last_name != nil
+    # full_name
   end
 
   def friendly_updated_at
-    updated_at.strftime('%b %e, %Y')
+    updated_at.strftime('%b %d, %Y')
   end
 
   def display_phone_prefix

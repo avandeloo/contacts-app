@@ -1,8 +1,11 @@
+<h1><%= @contact.full_name %></h1> 
+<h5>Updated On: <%= @contact.friendly_updated_at %></h5>
 <h2>First Name: <%= @contact.first_name %></h2>
+<h2>Middle Name: <%= @contact.middle_name %></h2>
 <h2>Last Name: <%= @contact.last_name %></h2>
 <h3>Email: <%= @contact.email %></h3>
 <h3>Phone Number: <%= @contact.display_phone_prefix %></h3>
-<h5>Updated On: <%= @contact.friendly_updated_at %></h5>
+<h3>Bio: <%= @contact.bio %></h3>
 
 <%= link_to "Home", "/contacts", class: "btn btn-primary" %>
 <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit", class: "btn btn-info" %>
