@@ -1,11 +1,13 @@
-<h1>Contact App</h1>
+<% if current_user %>
+  <% user_contacts = @contacts.where(user_id: current_user.id) %>
 
-<% @contacts.each do |contact| %>
+  <% user_contacts.each do |contact| %>
 
-  <h2>Name: <a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></h2>
-  <h2>Email: <%= contact.email %></h2>
-  <h2>Phone Number: <%= contact.phone_number %></h2>
+    <h2>Name: <a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></h2>
+    <h2>Email: <%= contact.email %></h2>
+    <h2>Phone Number: <%= contact.phone_number %></h2>
 
-<p>--------------------------------------------------------</p>
+  <p>--------------------------------------------------------</p>
 
+  <% end %>
 <% end %>

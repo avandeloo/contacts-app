@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+  belongs_to :user
+  
   def full_name
     "#{first_name}#{'' + middle_name if middle_name} #{last_name}".titleize
     # full_name = ""
@@ -6,6 +8,10 @@ class Contact < ApplicationRecord
     # full_name += " " if first_name != nil && last_name != nil
     # full_name += last_name.upcase if last_name != nil
     # full_name
+  end
+
+  def address_convert(address)
+    coordinates = Geocoder.coordinates(address)    
   end
 
   def friendly_updated_at
@@ -16,5 +22,9 @@ class Contact < ApplicationRecord
     number = phone_number
     number.prepend("+81 ") if number.length >= 8 && number.length < 10
     number
+  end
+
+  def created_by
+    user.name
   end
 end
